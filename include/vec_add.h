@@ -19,11 +19,13 @@ namespace swiftware::hpp {
 
   void vec_add_unrolled_scalarized(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
 
-  void vec_add_unrolled_avx(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
+  void vec_add_unrolled_sse(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
 
   void vec_add_unrolled8(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
 
   void vec_add_unrolled8_scalarized(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
+
+  void vec_add_unrolled_avx(std::vector<float> a, std::vector<float> b, std::vector<float>& c);
 
 }
 

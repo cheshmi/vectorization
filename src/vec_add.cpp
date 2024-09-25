@@ -6,6 +6,7 @@
 
 #include "immintrin.h"
 
+
 namespace swiftware::hpp {
 
   void vec_add(std::vector<float> a, std::vector<float> b, std::vector<float> &c) {
@@ -31,6 +32,20 @@ namespace swiftware::hpp {
     }
   }
 
+  void vec_add_unrolled_sse(std::vector<float> a, std::vector<float> b, std::vector<float>& c){
+    int n = a.size();
+    c.resize(n);
+    auto bnd1 = n - n % 8;
+    for (int i = 0; i < bnd1; i+=8) {
+      auto a_vec = _mm_loadu_ps(&a[i]);
+      auto b_vec = _mm_loadu_ps(&b[i]);
+      auto c_vec = _mm_add_ps(a_vec, b_vec);
+      _mm_storeu_ps(&c[i], c_vec);
+    }
+    for (int i = bnd1; i < n; ++i) {
+      c[i] = a[i] + b[i];
+    }
+  }
 
 
   void vec_add_unrolled_scalarized(std::vector<float> a, std::vector<float> b, std::vector<float>& c){
