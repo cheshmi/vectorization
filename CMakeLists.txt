@@ -6,8 +6,8 @@ cmake_minimum_required(VERSION 3.18)
 
 option(PROFILING_ENABLED "Enables Modules for Profiling, needs LIBFPM4" OFF)
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -mavx")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -mavx")
 include(FetchContent)
 
 FetchContent_Declare(

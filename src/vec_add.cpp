@@ -35,8 +35,8 @@ namespace swiftware::hpp {
   void vec_add_unrolled_sse(std::vector<float> a, std::vector<float> b, std::vector<float>& c){
     int n = a.size();
     c.resize(n);
-    auto bnd1 = n - n % 8;
-    for (int i = 0; i < bnd1; i+=8) {
+    auto bnd1 = n - n % 4;
+    for (int i = 0; i < bnd1; i+=4) {
       auto a_vec = _mm_loadu_ps(&a[i]);
       auto b_vec = _mm_loadu_ps(&b[i]);
       auto c_vec = _mm_add_ps(a_vec, b_vec);

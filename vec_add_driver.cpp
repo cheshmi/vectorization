@@ -28,11 +28,14 @@ static void BM_VECADD(benchmark::State &state,
 }
 
 BENCHMARK_CAPTURE(BM_VECADD, baseline_vec_add, swiftware::hpp::vec_add)->Args({2048})->Args({4096})->Args({8192});
+
 BENCHMARK_CAPTURE(BM_VECADD, unrolled_vec_add, swiftware::hpp::vec_add_unrolled)->Args({2048})->Args({4096})->Args({8192});
 BENCHMARK_CAPTURE(BM_VECADD, unrolled_scalarized_vec_add, swiftware::hpp::vec_add_unrolled_scalarized)->Args({2048})->Args({4096})->Args({8192});
-BENCHMARK_CAPTURE(BM_VECADD, unrolled_avx_vec_add, swiftware::hpp::vec_add_unrolled_avx)->Args({2048})->Args({4096})->Args({8192});
+BENCHMARK_CAPTURE(BM_VECADD, vec_add_unrolled_sse, swiftware::hpp::vec_add_unrolled_sse)->Args({2048})->Args({4096})->Args({8192});
+
 BENCHMARK_CAPTURE(BM_VECADD, unrolled8_vec_add, swiftware::hpp::vec_add_unrolled8)->Args({2048})->Args({4096})->Args({8192});
 BENCHMARK_CAPTURE(BM_VECADD, unrolled8_scalarized_vec_add, swiftware::hpp::vec_add_unrolled8_scalarized)->Args({2048})->Args({4096})->Args({8192});
+BENCHMARK_CAPTURE(BM_VECADD, unrolled_avx_vec_add, swiftware::hpp::vec_add_unrolled_avx)->Args({2048})->Args({4096})->Args({8192});
 
 
 BENCHMARK_MAIN();
