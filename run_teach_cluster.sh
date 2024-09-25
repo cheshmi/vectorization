@@ -3,9 +3,9 @@
 ##################### SLURM (do not change) v  #####################
 #SBATCH --cpus-per-task=8
 #SBATCH --export=ALL
-#SBATCH --job-name="lab01"
+#SBATCH --job-name="vectut"
 #SBATCH --nodes=1
-#SBATCH --output="tut01.%j.%N.out"
+#SBATCH --output="vectut.%j.%N.out"
 #SBATCH -t 00:15:00
 ##################### SLURM (do not change) ^  #####################
 
