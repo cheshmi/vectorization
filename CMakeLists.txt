@@ -43,10 +43,12 @@ include_directories(
 project(vectorization)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -mavx2")
 
-add_executable(vec_add_vec
-        ${CMAKE_SOURCE_DIR}/vec_add_driver.cpp
-        ${CMAKE_SOURCE_DIR}/src/vec_add.cpp
-)
-target_link_libraries(vec_add_vec
-        benchmark::benchmark )
+# Vector Addition target
+add_executable(vec_add_driver src/vec_add.cpp)
+target_link_libraries(vec_add_driver benchmark::benchmark)
+
+# Matrix-Vector Multiplication target
+add_executable(mat_vec_driver src/matrix_vec.cpp mat_vec_driver.cpp)
+target_link_libraries(mat_vec_driver benchmark::benchmark)
