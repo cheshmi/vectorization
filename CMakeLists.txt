@@ -46,7 +46,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -mavx2")
 
 # Vector Addition target
-add_executable(vec_add_driver src/vec_add.cpp)
+add_executable(vec_add_driver src/vec_add.cpp vec_add_driver.cpp)
 target_link_libraries(vec_add_driver benchmark::benchmark)
 
 # Matrix-Vector Multiplication target

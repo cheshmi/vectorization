@@ -39,5 +39,5 @@ void matmul_inner_vec(const float* A, const float* x, float* y, int m, int n) {
 
 // 2D vectorization (SIMD on both i and j)
 void matmul_2d_vec(const float* A, const float* x, float* y, int m, int n) {
-   
+  // TODO: Implement 2D vectorization using AVX2  intrinsics
 }
