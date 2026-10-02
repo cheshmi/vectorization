@@ -1,4 +1,4 @@
-# vectorization
+# Vectorization
 
 This tutorial teaches vectorization in CE 4SP4 using two simple examples: vector addition and matrix-vector multiplication.
 
